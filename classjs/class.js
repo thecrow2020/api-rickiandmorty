@@ -29,3 +29,20 @@ class Personajes {
     }
 }
 
+class Episodios {
+
+    getEpisodio = async(id) => {
+
+        return await fetch(`https://rickandmortyapi.com/api/episode/${id}`)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            return data
+        })
+        .catch(function(err) {
+            console.error(err);
+        });
+    }
+}
+

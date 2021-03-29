@@ -5,6 +5,7 @@ async function volver() {
 }
 
 async function ListaPersonajes() {
+    let verlista = document.getElementById("mostrar");
 
     const datas = new Personajes() 
     
@@ -17,8 +18,12 @@ async function ListaPersonajes() {
             div.className = "listPersons"
             let array = data.results[i];
             div.innerHTML = array.id + ` - ` + array.name;
+            
             div.onclick = ver
             lista.appendChild(div)
+            verlista.addEventListener("click", function() {
+                lista.removeChild(div)
+            })
         }
         
     }catch(err) {
@@ -29,12 +34,15 @@ async function ListaPersonajes() {
 
 async function ver(e) {
     const datas = new Personajes() 
+    const episodios = new Episodios()
     try {
         let contenido = e.target.textContent
         let idsnumber = contenido.split(" ");
         let idtomado = idsnumber[0]
-        let getids = await datas.getIds(idtomado);
 
+        let getids = await datas.getIds(idtomado);
+        let Episodio = await episodios.getEpisodio(idtomado);
+        
         let contenedor = document.getElementById("contimg");
         let lista = document.getElementById("lista");
     
@@ -54,6 +62,8 @@ async function ver(e) {
         estado.innerText = getids.status
         let especie = document.getElementById("especie");
         especie.innerText = getids.species
+        let episodioid = document.getElementById("Episodios");
+        episodioid.innerText = Episodio.name
 
     }catch(err) {
         return err
