@@ -9,24 +9,31 @@
 </head>
 <body>
     <div class="fondo">
-        <img src="img/Rick And Morty Png File - Rick E Morty Logo Png, Transparent Png - vhv.png" alt="">
-        <h1 class="title">PERSONAJES</h1>
+        <div class="contenedor-btn-volver">
+            <button class="btn-volver" onclick="volver()">Volver a Pagina principal</button>
+        </div>
+        <div class="titulo">
+            <img src="img/Rick And Morty Png File - Rick E Morty Logo Png, Transparent Png - vhv.png" alt="">
+        </div>
+        <div class="linea">
+            <button class="btn-ver" onclick="ListaPersonajes()" id="mostrar">VER PERSONAJES</button>
+        </div>
     </div>    
 
-    <div class="linea">
-        <button class="btn" onclick="dale()">Mostrar</button>
-    </div>
 
     <div class="lista" id="lista"></div>
-    <div class="lista1"></div>
-    <div class="imgpersonaje">
-        <img src="" id="img">
+    
+    <div class="imgpersonaje" id="contimg">
+        <div class="infopersonajes">
+            <img src="" id="img">
+        </div>
+        <div class="infopersonajes" id="nombre"></div>
+        <div id="especie" class="infopersonajes"></div>
+        <div id="estado" class="infopersonajes"></div>
+        
     </div>
 
 
-    <div class="contenedor-btn-volver">
-        <button class="btn" onclick="volver()">Volver a Pagina principal</button>
-    </div>
     <script src="classjs/class.js"></script>
     <script src="js/personajes.js"></script>
         

@@ -14,8 +14,8 @@ class Personajes {
         });
     }
 
-    getId = async() => {
-        return await fetch(`https://rickandmortyapi.com/api/character/`)
+    getIds = async(id) => {
+        return await fetch(`https://rickandmortyapi.com/api/character/${id}`)
 
         .then(function(response) {
             return response.json();
