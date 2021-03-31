@@ -10,22 +10,34 @@
 <body>
 
     <div class="fondo">
-        <img src="img/Rick And Morty Png File - Rick E Morty Logo Png, Transparent Png - vhv.png" alt="">
-        <h1 class="title">EPISODIOS</h1>
+        <div class="contenedor-btn-volver">
+            <button class="btn-volver" onclick="volver()">Volver a Pagina principal</button>
+        </div>
+        <div class="titulo">
+            <img src="img/Rick And Morty Png File - Rick E Morty Logo Png, Transparent Png - vhv.png" alt="">
+        </div>
+        <div class="linea">
+            <button id="btn-episodios" onclick="GetEpiAll()" class="btn-episodios">Episodios</button>
+        </div>
     </div>
 
-    <div class="linea">
-        <button id="btn-episodios" onclick="GetEpi()" class="btn-episodios">Episodios</button>
-    </div>
 
 
     <div class="lista">
         <div id="listaEpi" class="listaEpi"></div>
     </div>
+    
+    <div class="imgpersonaje" id="contimg">
 
-    <div class="contenedor-btn-volver">
-        <button class="btn" onclick="volver()">Volver a Pagina principal</button>
+        <label for="">Episodio Seleccionado: </label>
+        <div id="Episelect" class="Episelect"></div>
+
+        <div class="infopersonajes" id="contenedor">
+            <div class="infopersonajes" id="nombre"></div>
+            <div id="todo"></div>
+        </div>        
     </div>
+
 
     <script src="classjs/class.js"></script>
     <script src="js/episodios.js"></script>
