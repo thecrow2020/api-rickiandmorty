@@ -38,7 +38,11 @@ async function ListaPersonajes() {
             div.className = "listPersons"
             let array = page2.results[page];
             div.innerText = array.id + ` - ` + array.name
-            lista.appendChild(div)            
+            lista.appendChild(div)    
+            div.onclick = ver
+            verlista.addEventListener("click", function() {
+                lista.removeChild(div)
+            })        
         }
     }catch (err) {
         return err
@@ -55,6 +59,7 @@ async function ListaPersonajes() {
             let array = page3.results[page];
             div.innerText = array.id + ` - ` + array.name
             lista.appendChild(div)  
+            div.onclick = ver
         }
     }catch (err) {
         return err
@@ -71,6 +76,7 @@ async function ListaPersonajes() {
             let array = page4.results[page];
             div.innerText = array.id + ` - ` + array.name
             lista.appendChild(div)  
+            div.onclick = ver
         }
     }catch (err) {
         return err
@@ -87,6 +93,7 @@ async function ListaPersonajes() {
             let array = page5.results[page];
             div.innerText = array.id + ` - ` + array.name
             lista.appendChild(div)  
+            div.onclick = ver
         }
     }catch (err) {
         return err
@@ -103,10 +110,8 @@ async function ver(e) {
         let idtomado = idsnumber[0]
 
         let getids = await datas.getIds(idtomado);
-        
         let Episodio = await episodios.getEpisodio(idtomado);
     
-        console.log(getid2)
         let contenedor = document.getElementById("contimg");
         let lista = document.getElementById("lista");
     
@@ -132,10 +137,3 @@ async function ver(e) {
         return err
     }
 }
-
-
-
-
-
-
-
